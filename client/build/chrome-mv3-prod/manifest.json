@@ -1,0 +1,47 @@
+{
+  "icons": {
+    "16": "icon16.plasmo.6c567d50.png",
+    "32": "icon32.plasmo.76b92899.png",
+    "48": "icon48.plasmo.aced7582.png",
+    "64": "icon64.plasmo.8bb5e6e0.png",
+    "128": "icon128.plasmo.3c1ed2d2.png"
+  },
+  "manifest_version": 3,
+  "action": {
+    "default_icon": {
+      "16": "icon16.plasmo.6c567d50.png",
+      "32": "icon32.plasmo.76b92899.png",
+      "48": "icon48.plasmo.aced7582.png",
+      "64": "icon64.plasmo.8bb5e6e0.png",
+      "128": "icon128.plasmo.3c1ed2d2.png"
+    },
+    "default_popup": "popup.html"
+  },
+  "version": "0.0.1",
+  "author": "Pankaj Kumar",
+  "name": "You tube video bookmark",
+  "description": "A extension to bookmark YouTube video timestamp",
+  "background": { "service_worker": "static/background/index.js" },
+  "content_scripts": [
+    {
+      "matches": ["https://www.youtube.com/*"],
+      "js": ["content.06af5f40.js"],
+      "css": []
+    }
+  ],
+  "host_permissions": ["https://*/*"],
+  "oauth2": {
+    "client_id": "25925349537-b9gufdkmhqm34oevuno7duos5vevpdqu.apps.googleusercontent.com",
+
+    "scopes": ["https://www.googleapis.com/auth/userinfo.email", "https://www.googleapis.com/auth/userinfo.profile", "openid"]
+  },
+  "permissions": [
+    "webRequest",
+    "tabs",
+    "identity",
+    "storage"
+  ],
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self'"
+  }
+}
